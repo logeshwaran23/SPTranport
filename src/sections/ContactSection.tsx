@@ -2,33 +2,35 @@ import React from 'react';
 import { Phone, MessageSquare, MapPin, Mail, Clock, Building2 } from 'lucide-react';
 import { Container } from '../components/common/Container';
 import { Button } from '../components/common/Button';
+import { EnquiryForm } from '../components/EnquiryForm';
 import { BUSINESS_CONFIG } from '../data/business';
 
 export const ContactSection: React.FC = () => {
   return (
-    <section id="contact" className="py-16 lg:py-24 bg-white border-b border-slate-200/80">
+    <section id="contact" className="py-16 sm:py-24 bg-slate-50 border-b border-slate-200/80">
       <Container>
         
-        {/* Header */}
+        {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center space-y-3 mb-12 sm:mb-16">
-          <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-100/90 px-3 py-1 rounded-full border border-emerald-200">
-            Contact Information
+          <span className="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100/90 px-3.5 py-1.5 rounded-full border border-emerald-200">
+            Contact & Enquiry
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            Get in Touch
+          <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+            Get in Touch & Book Transport
           </h2>
           <p className="text-sm sm:text-base text-slate-600">
-            Contact us directly via phone or WhatsApp to discuss your pickup location, destination, and transport requirement.
+            Fill out the enquiry form below to send an email directly to <strong className="text-slate-900">{BUSINESS_CONFIG.email}</strong>, or call / WhatsApp us directly.
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Top Info Cards Grid */}
+        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
           
           {/* Left Column: Direct Call & WhatsApp Action Cards */}
-          <div className="space-y-6">
+          <div className="lg:col-span-6 space-y-6">
             
             {/* Call Us Card */}
-            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-4 agri-card-hover">
+            <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4 agri-card-hover text-left">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0">
                   <Phone className="w-6 h-6" />
@@ -44,7 +46,7 @@ export const ContactSection: React.FC = () => {
                 href={`tel:${BUSINESS_CONFIG.phoneRaw}`}
                 variant="primary"
                 size="md"
-                className="w-full text-center"
+                className="w-full text-center justify-center"
                 icon={<Phone className="w-4 h-4" />}
               >
                 Call Us
@@ -52,7 +54,7 @@ export const ContactSection: React.FC = () => {
             </div>
 
             {/* WhatsApp Us Card */}
-            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-4 agri-card-hover">
+            <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4 agri-card-hover text-left">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl bg-amber-100 text-amber-900 flex items-center justify-center shrink-0">
                   <MessageSquare className="w-6 h-6" />
@@ -70,7 +72,7 @@ export const ContactSection: React.FC = () => {
                 rel="noopener noreferrer"
                 variant="secondary"
                 size="md"
-                className="w-full text-center"
+                className="w-full text-center justify-center"
                 icon={<MessageSquare className="w-4 h-4" />}
               >
                 WhatsApp Us
@@ -80,7 +82,7 @@ export const ContactSection: React.FC = () => {
           </div>
 
           {/* Right Column: Business Contact Card */}
-          <div className="p-8 rounded-2xl bg-slate-900 text-white space-y-6 flex flex-col justify-between shadow-lg">
+          <div className="lg:col-span-6 p-8 rounded-2xl bg-slate-900 text-white space-y-6 flex flex-col justify-between shadow-lg text-left">
             <div className="space-y-6">
               <div className="flex items-center gap-3 border-b border-slate-800 pb-4">
                 <Building2 className="w-6 h-6 text-emerald-400" />
@@ -120,6 +122,11 @@ export const ContactSection: React.FC = () => {
             </div>
           </div>
 
+        </div>
+
+        {/* Prominent Interactive Transport Enquiry Form */}
+        <div className="max-w-4xl mx-auto">
+          <EnquiryForm />
         </div>
 
       </Container>

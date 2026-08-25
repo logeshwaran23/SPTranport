@@ -20,6 +20,10 @@ export interface BusinessConfig {
   aboutImage: string;
   logoText: string;
   logoSubtitle: string;
+  emailjsServiceId: string;
+  emailjsTemplateId: string;
+  emailjsPublicKey: string;
+  web3formsAccessKey: string;
 }
 
 export const BUSINESS_CONFIG: BusinessConfig = {
@@ -27,7 +31,6 @@ export const BUSINESS_CONFIG: BusinessConfig = {
   tagline: 'Farm-to-Market Transport',
   heroHeadline: 'Reliable Farm-to-Market Transport',
   heroSupportingText: 'Pickup vehicle with driver for transporting agricultural products from your farm or location to markets, shops and destinations across your service area.',
-  // Professional cinematic photograph of pickup truck carrying a payload of fresh vegetables
   heroBgImage: '/images/hero-pickup-bg.png',
   shortDescription: 'Pickup vehicle transportation with driver for vegetables, fruits, grains, and goods from farms to markets, shops, and warehouses.',
   aboutText: 'We provide reliable pickup vehicle transportation with a driver for farmers, traders, shops and businesses that need to move agricultural products and goods from one location to another.',
@@ -44,5 +47,14 @@ export const BUSINESS_CONFIG: BusinessConfig = {
   vehicleImage: '/images/about-vehicle.png',
   aboutImage: '/images/about-vehicle.png',
   logoText: 'SP TRANSPORT',
-  logoSubtitle: 'Farm Produce & Goods Logistics'
+  logoSubtitle: 'Farm Produce & Goods Logistics',
+  // Flexibly support VITE_WEB3FORMS_ACCESS_KEY, WEB3FORMS_ACCESS_KEY, or WEB3FORMS_KEY
+  web3formsAccessKey:
+    import.meta.env.VITE_WEB3FORMS_ACCESS_KEY ||
+    import.meta.env.WEB3FORMS_ACCESS_KEY ||
+    import.meta.env.WEB3FORMS_KEY ||
+    '',
+  emailjsServiceId: import.meta.env.VITE_EMAILJS_SERVICE_ID || import.meta.env.EMAILJS_SERVICE_ID || '',
+  emailjsTemplateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || import.meta.env.EMAILJS_TEMPLATE_ID || '',
+  emailjsPublicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || import.meta.env.EMAILJS_PUBLIC_KEY || ''
 };
