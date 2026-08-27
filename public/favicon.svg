@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <rect width="512" height="512" rx="128" fill="#047857"/>
+  <!-- Truck body outline -->
+  <path d="M110 320h220v-90c0-12-10-22-22-22h-68l-32-48c-6-9-16-14-27-14h-71c-12 0-22 10-22 22v152z" fill="#ffffff"/>
+  <!-- Truck cab front window -->
+  <path d="M228 168l28 42h54v-42h-82z" fill="#047857"/>
+  <!-- Wheels -->
+  <circle cx="160" cy="340" r="38" fill="#064e3b"/>
+  <circle cx="160" cy="340" r="18" fill="#ffffff"/>
+  <circle cx="310" cy="340" r="38" fill="#064e3b"/>
+  <circle cx="310" cy="340" r="18" fill="#ffffff"/>
+  <!-- Leaf accent above trailer -->
+  <path d="M370 140c-35 0-60 25-60 60 35 0 60-25 60-60z" fill="#f59e0b"/>
+  <path d="M310 200c0-35 25-60 60-60-10 35-35 60-60 60z" fill="#10b981"/>
+</svg>
