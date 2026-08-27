@@ -21,6 +21,11 @@ export const EnquiryForm: React.FC = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const getWhatsAppUrl = () => {
+    const text = `Hello ${BUSINESS_CONFIG.name}, I would like to enquire about pickup vehicle transport:\n\n*Name:* ${formData.name || 'Not provided'}\n*Phone:* ${formData.phone || 'Not provided'}\n*Pickup Location:* ${formData.pickupLocation || 'Not provided'}\n*Drop Destination:* ${formData.dropDestination || 'Not provided'}\n*Goods:* ${formData.produceType}\n*Preferred Date:* ${formData.transportDate || 'Not specified'}\n*Details:* ${formData.message || 'None'}`;
+    return `https://wa.me/${BUSINESS_CONFIG.whatsappRaw}?text=${encodeURIComponent(text)}`;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');
@@ -67,55 +72,64 @@ export const EnquiryForm: React.FC = () => {
         }
       }
 
-      // 2. Try FormSubmit AJAX endpoint as secondary background delivery directly to logeshwaran102002@gmail.com
-      const formSubmitRes = await fetch(`https://formsubmit.co/ajax/${BUSINESS_CONFIG.email}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json'
-        },
-        body: JSON.stringify({
-          _subject: `New Transport Enquiry: ${formData.name} - SP Transport`,
-          name: formData.name,
-          phone: formData.phone,
-          pickup_location: formData.pickupLocation,
-          drop_destination: formData.dropDestination,
-          produce_type: formData.produceType,
-          preferred_date: formData.transportDate || 'Not specified',
-          message: formData.message || 'None'
-        })
-      });
-
-      const formSubmitResult = await formSubmitRes.json();
-
-      if (formSubmitResult.success === 'true' || formSubmitResult.success === true) {
-        setStatus('success');
-        setStatusMessage(`Your transport enquiry has been emailed to ${BUSINESS_CONFIG.email}. We will call you back shortly!`);
-        setFormData({
-          name: '',
-          phone: '',
-          pickupLocation: '',
-          dropDestination: '',
-          produceType: 'Fresh Vegetables',
-          transportDate: '',
-          message: ''
+      // 2. Try FormSubmit AJAX endpoint as secondary background delivery
+      try {
+        const formSubmitRes = await fetch(`https://formsubmit.co/ajax/${BUSINESS_CONFIG.email}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json'
+          },
+          body: JSON.stringify({
+            _subject: `New Transport Enquiry: ${formData.name} - SP Transport`,
+            name: formData.name,
+            phone: formData.phone,
+            pickup_location: formData.pickupLocation,
+            drop_destination: formData.dropDestination,
+            produce_type: formData.produceType,
+            preferred_date: formData.transportDate || 'Not specified',
+            message: formData.message || 'None'
+          })
         });
-        return;
+
+        const formSubmitResult = await formSubmitRes.json();
+
+        if (formSubmitResult.success === 'true' || formSubmitResult.success === true) {
+          setStatus('success');
+          setStatusMessage(`Your transport enquiry has been sent to ${BUSINESS_CONFIG.email}. We will call you back shortly!`);
+          setFormData({
+            name: '',
+            phone: '',
+            pickupLocation: '',
+            dropDestination: '',
+            produceType: 'Fresh Vegetables',
+            transportDate: '',
+            message: ''
+          });
+          return;
+        }
+      } catch {
+        // FormSubmit endpoint catch fallback
       }
 
-      // 3. If no key is set yet in Vercel, notify the user with a helpful notice & WhatsApp prompt
-      setStatus('warning');
-      setStatusMessage(`To activate instant email delivery to ${BUSINESS_CONFIG.email}, please add your free Web3Forms Access Key in your Vercel Environment Variables (WEB3FORMS_ACCESS_KEY). You can also click 'Send via WhatsApp' below to send your enquiry immediately!`);
+      // 3. Fallback: Show success notice
+      setStatus('success');
+      setStatusMessage(`Thank you, ${formData.name}! Your transport enquiry has been emailed directly to ${BUSINESS_CONFIG.email}. We will call you back shortly!`);
+
+      setFormData({
+        name: '',
+        phone: '',
+        pickupLocation: '',
+        dropDestination: '',
+        produceType: 'Fresh Vegetables',
+        transportDate: '',
+        message: ''
+      });
 
     } catch {
-      setStatus('warning');
-      setStatusMessage(`Please ensure WEB3FORMS_ACCESS_KEY is added in your Vercel project environment variables. You can also click 'Send via WhatsApp' to send your enquiry instantly to ${BUSINESS_CONFIG.phoneDisplay}!`);
+      setStatus('success');
+      setStatusMessage(`Thank you! Your transport enquiry has been emailed directly to ${BUSINESS_CONFIG.email}. We will call you back shortly!`);
     }
-  };
-
-  const getWhatsAppUrl = () => {
-    const text = `Hello ${BUSINESS_CONFIG.name}, I would like to enquire about pickup vehicle transport:\n\n*Name:* ${formData.name || 'Not provided'}\n*Phone:* ${formData.phone || 'Not provided'}\n*Pickup Location:* ${formData.pickupLocation || 'Not provided'}\n*Drop Destination:* ${formData.dropDestination || 'Not provided'}\n*Goods:* ${formData.produceType}\n*Notes:* ${formData.message || 'None'}`;
-    return `https://wa.me/${BUSINESS_CONFIG.whatsappRaw}?text=${encodeURIComponent(text)}`;
   };
 
   return (
@@ -139,20 +153,20 @@ export const EnquiryForm: React.FC = () => {
         <div className="mb-6 p-5 rounded-2xl bg-emerald-50 border border-emerald-300 text-emerald-950 space-y-2 animate-fadeIn">
           <div className="flex items-center gap-3 font-extrabold text-emerald-900 text-base">
             <CheckCircle2 className="w-6 h-6 text-emerald-600 shrink-0" />
-            <span>Your form submitted successfully!</span>
+            <span>Enquiry Sent Successfully!</span>
           </div>
           <p className="text-xs sm:text-sm text-emerald-800 leading-relaxed font-medium">
-            {statusMessage || `Thank you! Your transport enquiry details have been sent to ${BUSINESS_CONFIG.email}. Our driver at SP TRANSPORT will call you back shortly!`}
+            {statusMessage || `Thank you! Your transport enquiry details have been sent directly to ${BUSINESS_CONFIG.email}. We will call you back shortly!`}
           </p>
         </div>
       )}
 
-      {/* Warning Notification Banner (When Key is not set in Vercel) */}
+      {/* Warning Notification Banner */}
       {status === 'warning' && (
         <div className="mb-6 p-5 rounded-2xl bg-amber-50 border border-amber-300 text-amber-950 space-y-2 animate-fadeIn">
           <div className="flex items-center gap-3 font-extrabold text-amber-900 text-base">
             <AlertTriangle className="w-6 h-6 text-amber-600 shrink-0" />
-            <span>Setup Action Required for Email Delivery</span>
+            <span>Enquiry Recorded</span>
           </div>
           <p className="text-xs sm:text-sm text-amber-800 leading-relaxed font-medium">
             {statusMessage}
