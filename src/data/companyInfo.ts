@@ -76,40 +76,55 @@ export const ABOUT_INFO = {
 
 export const SERVICES: ServiceItem[] = [
   {
-    id: 'agri-product-transport',
-    title: 'Agricultural Product Transport',
-    description: 'Safe transport of fresh vegetables, fruits, harvested crops, and agricultural products from harvest sites to buyers.',
-    iconName: 'Sprout'
+    id: 'bolero-pickup',
+    title: 'Bolero Pickup',
+    description: 'Ideal for transporting agricultural products, farm goods, sacks, crates, and other loads.',
+    iconName: 'Truck',
+    badge: 'Popular Choice',
+    imageUrl: '/images/about-vehicle.png'
   },
   {
-    id: 'farm-pickup',
-    title: 'Farm Pickup',
-    description: 'Direct collection of goods right from farm gates, green houses, fields, and local pickup points.',
-    iconName: 'Tractor'
+    id: 'tractor-transport',
+    title: 'Tractor Transport',
+    description: 'Suitable for farm operations, heavy agricultural loads, farm equipment, and local transport.',
+    iconName: 'Tractor',
+    badge: 'Heavy Farm Transport',
+    imageUrl: '/images/tractor-transport.png'
   },
   {
-    id: 'market-delivery',
-    title: 'Market Delivery',
-    description: 'Punctual transport to wholesale mandis, Koyambedu market, auction yards, and commercial retail shops.',
-    iconName: 'Store'
+    id: 'farm-to-market-transport',
+    title: 'Farm-to-Market Transport',
+    description: 'Reliable pickup and delivery support for moving agricultural products from farms to markets.',
+    iconName: 'Store',
+    badge: 'Direct Market Delivery',
+    imageUrl: '/images/farm-market-delivery.png'
+  }
+];
+
+export const SERVICE_TRUST_HIGHLIGHTS = [
+  {
+    id: 'experienced-drivers',
+    title: 'Experienced Drivers',
+    description: 'Professional & courteous drivers who know local routes and farm routes.',
+    iconName: 'UserCheck'
   },
   {
-    id: 'pickup-with-driver',
-    title: 'Pickup Vehicle With Driver',
-    description: 'Dedicated commercial pickup truck accompanied by a driver assigned to handle your trip requirement.',
+    id: 'reliable-pickup',
+    title: 'Reliable Pickup',
+    description: 'On-time pickup from fields, farms, houses, or local collection points.',
     iconName: 'Truck'
   },
   {
-    id: 'local-goods-delivery',
-    title: 'Local Goods Delivery',
-    description: 'Reliable transport for farm supplies, seeds, fertilizers, feeds, packaged crops, and local goods.',
-    iconName: 'Package'
+    id: 'farm-to-market-support',
+    title: 'Farm-to-Market Support',
+    description: 'Direct door-to-mandi delivery to wholesale markets and buyers.',
+    iconName: 'Sprout'
   },
   {
     id: 'flexible-transport',
-    title: 'Flexible Transport Service',
-    description: 'Custom pickup locations and drop destinations planned around your specific route requirements.',
-    iconName: 'Route'
+    title: 'Flexible Transport',
+    description: 'Custom trip scheduling adapted to your harvest and loading timings.',
+    iconName: 'ShieldCheck'
   }
 ];
 
@@ -145,27 +160,27 @@ export const SERVICE_AREA_INFO: ServiceAreaInfo = {
 
 export const WHY_CHOOSE_US_ITEMS: WhyChooseUsItem[] = [
   {
-    id: 'vehicle-driver',
-    title: 'Vehicle With Driver',
-    description: 'Every transport trip includes a pickup vehicle accompanied by a driver to execute your delivery smoothly.',
+    id: 'experienced-drivers',
+    title: 'Experienced Drivers',
+    description: 'Skilled drivers who understand local routes and transport requirements.',
     iconName: 'UserCheck'
   },
   {
-    id: 'agri-focus',
-    title: 'Agricultural Transport Focus',
-    description: 'Experienced in carrying fresh vegetables, fruits, harvested crops, and local goods safely.',
+    id: 'reliable-vehicles',
+    title: 'Reliable Vehicles',
+    description: 'Well-maintained vehicles ready for agricultural and goods transportation.',
+    iconName: 'Truck'
+  },
+  {
+    id: 'farm-to-market-support',
+    title: 'Farm-to-Market Support',
+    description: 'Convenient transport support for moving goods from farms to nearby markets.',
     iconName: 'Sprout'
   },
   {
-    id: 'flexible-destinations',
-    title: 'Flexible Destinations',
-    description: 'We transport from your farm or location in Tirupattur and surrounding areas to your required drop-off destination.',
-    iconName: 'MapPin'
-  },
-  {
-    id: 'simple-enquiry',
-    title: 'Simple Enquiry Process',
-    description: 'Direct call or WhatsApp message to check transport details and confirm your trip schedule.',
-    iconName: 'PhoneCall'
+    id: 'flexible-transport',
+    title: 'Flexible Transport',
+    description: 'Choose the vehicle and transport option that suits your requirement.',
+    iconName: 'Route'
   }
 ];

@@ -1,7 +1,6 @@
 import React from 'react';
-import { ArrowRight, MessageSquare, Truck, UserCheck, Sprout, MapPin } from 'lucide-react';
+import { PhoneCall, MessageCircle, Truck, UserCheck, Sprout, MapPin } from 'lucide-react';
 import { Container } from '../components/common/Container';
-import { Button } from '../components/common/Button';
 import { BUSINESS_CONFIG } from '../data/business';
 
 export const HeroSection: React.FC = () => {
@@ -58,29 +57,25 @@ export const HeroSection: React.FC = () => {
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4 sm:max-w-md">
-            <Button
-              asAnchor
-              href="#contact"
-              variant="primary"
-              size="lg"
-              className="text-center justify-center bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-emerald-600 text-white font-bold shadow-lg"
-              icon={<ArrowRight className="w-5 h-5" />}
+            <a
+              href={`tel:${BUSINESS_CONFIG.phoneRaw}`}
+              aria-label={`Call ${BUSINESS_CONFIG.name} at ${BUSINESS_CONFIG.phoneDisplay}`}
+              className="py-3.5 px-6 rounded-2xl bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-emerald-600 text-white font-extrabold text-base shadow-lg transition-all flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-emerald-500"
             >
-              Get a Transport Quote
-            </Button>
+              <PhoneCall className="w-5 h-5 shrink-0" />
+              <span>Call Us</span>
+            </a>
             
-            <Button
-              asAnchor
+            <a
               href={`https://wa.me/${BUSINESS_CONFIG.whatsappRaw}?text=${encodeURIComponent('Hello ' + BUSINESS_CONFIG.name + ', I need a transport quote for agricultural goods.')}`}
               target="_blank"
               rel="noopener noreferrer"
-              variant="secondary"
-              size="lg"
-              className="text-center justify-center font-bold shadow-md"
-              icon={<MessageSquare className="w-5 h-5 text-slate-950" />}
+              aria-label={`Send WhatsApp message to ${BUSINESS_CONFIG.name}`}
+              className="py-3.5 px-6 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-white border border-slate-700 font-extrabold text-base backdrop-blur-md shadow-md transition-all flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-slate-700"
             >
-              WhatsApp Us
-            </Button>
+              <MessageCircle className="w-5 h-5 shrink-0 text-emerald-400" />
+              <span>WhatsApp Us</span>
+            </a>
           </div>
 
         </div>

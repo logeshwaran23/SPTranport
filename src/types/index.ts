@@ -15,6 +15,8 @@ export interface ServiceItem {
   title: string;
   description: string;
   iconName: string;
+  imageUrl?: string;
+  badge?: string;
 }
 
 export interface VehicleInfo {

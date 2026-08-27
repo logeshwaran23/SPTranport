@@ -3,11 +3,11 @@ import { Header } from '../components/common/Header';
 import { Footer } from '../components/common/Footer';
 import { HeroSection } from '../sections/HeroSection';
 import { TrustHighlightsSection } from '../sections/TrustHighlightsSection';
-import { AboutSection } from '../sections/AboutSection';
 import { ServicesSection } from '../sections/ServicesSection';
 import { VehicleSection } from '../sections/VehicleSection';
 import { ServiceAreaSection } from '../sections/ServiceAreaSection';
 import { WhyChooseUsSection } from '../sections/WhyChooseUsSection';
+import { AboutSection } from '../sections/AboutSection';
 import { ContactSection } from '../sections/ContactSection';
 import { FinalCtaSection } from '../sections/FinalCtaSection';
 
@@ -18,35 +18,35 @@ export const HomePage: React.FC = () => {
       <Header />
 
       <main className="flex-grow">
-        {/* Hero Section */}
+        {/* 2. Hero Section */}
         <HeroSection />
 
-        {/* Trust Highlights */}
+        {/* 3. Trust Highlights */}
         <TrustHighlightsSection />
 
-        {/* About Section */}
-        <AboutSection />
-
-        {/* Services Section */}
+        {/* 4. Services Section */}
         <ServicesSection />
 
-        {/* Vehicle Section */}
+        {/* 5. Vehicle Capabilities Section */}
         <VehicleSection />
 
-        {/* Service Area / Destinations */}
+        {/* 6. Service Area / Destinations */}
         <ServiceAreaSection />
 
-        {/* Why Choose Us */}
+        {/* 7. Why Choose Us Section */}
         <WhyChooseUsSection />
 
-        {/* Contact Section */}
+        {/* 8. About Section */}
+        <AboutSection />
+
+        {/* 9. Contact Section */}
         <ContactSection />
 
-        {/* Final CTA */}
+        {/* 10. Final CTA */}
         <FinalCtaSection />
       </main>
 
-      {/* Footer */}
+      {/* 11. Footer */}
       <Footer />
     </div>
   );
