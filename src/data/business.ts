@@ -27,7 +27,7 @@ export interface BusinessConfig {
 }
 
 export const BUSINESS_CONFIG: BusinessConfig = {
-  name: 'SP TRANSPORT',
+  name: 'SPL TRANSPORTS',
   tagline: 'Farm-to-Market Transport',
   heroHeadline: 'Reliable Farm-to-Market Transport',
   heroSupportingText: 'Pickup vehicle with driver for transporting agricultural products from your farm or location to markets, shops and destinations across your service area.',
@@ -46,7 +46,7 @@ export const BUSINESS_CONFIG: BusinessConfig = {
   workingHours: 'Available for Scheduled & Urgent Transport Trips',
   vehicleImage: '/images/about-vehicle.png',
   aboutImage: '/images/about-vehicle.png',
-  logoText: 'SP TRANSPORT',
+  logoText: 'SPL TRANSPORTS',
   logoSubtitle: 'Farm Produce & Goods Logistics',
   // Flexibly support VITE_WEB3FORMS_ACCESS_KEY, WEB3FORMS_ACCESS_KEY, or WEB3FORMS_KEY
   web3formsAccessKey:
