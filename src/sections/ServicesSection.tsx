@@ -59,7 +59,7 @@ export const ServicesSection: React.FC = () => {
                     <div className="relative h-44 sm:h-48 w-full overflow-hidden bg-slate-900">
                       <img
                         src={service.imageUrl}
-                        alt={`${service.title} - SP Transport Service`}
+                        alt={`${service.title} - SPL Transports Service`}
                         className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
                         width="400"

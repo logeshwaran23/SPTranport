@@ -63,7 +63,7 @@ export const TRUST_HIGHLIGHTS: TrustHighlight[] = [
 
 export const ABOUT_INFO = {
   title: 'Transport That Connects Farms to Markets',
-  subtitle: 'About SP TRANSPORT',
+  subtitle: 'About SPL TRANSPORTS',
   description: BUSINESS_CONFIG.aboutText,
   points: [
     'Pickup vehicle provided with a driver for every trip',

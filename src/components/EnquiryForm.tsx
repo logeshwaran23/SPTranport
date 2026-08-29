@@ -81,7 +81,7 @@ export const EnquiryForm: React.FC = () => {
             Accept: 'application/json'
           },
           body: JSON.stringify({
-            _subject: `New Transport Enquiry: ${formData.name} - SP Transport`,
+            _subject: `New Transport Enquiry: ${formData.name} - SPL Transports`,
             name: formData.name,
             phone: formData.phone,
             pickup_location: formData.pickupLocation,

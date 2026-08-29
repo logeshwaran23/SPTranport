@@ -130,7 +130,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-3 text-center sm:text-left font-medium">
-          <p>© 2026 SP Transport. All rights reserved.</p>
+          <p>© 2026 SPL Transports. All rights reserved.</p>
           <p className="text-slate-500">
             Agricultural Produce & Local Goods Transportation
           </p>

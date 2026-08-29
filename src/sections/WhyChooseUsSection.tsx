@@ -21,7 +21,7 @@ export const WhyChooseUsSection: React.FC = () => {
             Why Choose Us
           </span>
           <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-            Why Choose SP Transport?
+            Why Choose SPL Transports?
           </h2>
           <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
             Reliable local transport support designed to make farm pickup and goods delivery simple.
