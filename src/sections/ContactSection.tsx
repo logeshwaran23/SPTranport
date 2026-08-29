@@ -19,7 +19,7 @@ export const ContactSection: React.FC = () => {
             Get in Touch & Book Transport
           </h2>
           <p className="text-sm sm:text-base text-slate-600">
-            Fill out the enquiry form below to send an email directly to <strong className="text-slate-900">{BUSINESS_CONFIG.email}</strong>, or call / WhatsApp us directly.
+            Fill out the enquiry form below or call / WhatsApp us directly.
           </p>
         </div>
 

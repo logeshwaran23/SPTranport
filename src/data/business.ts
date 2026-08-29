@@ -40,7 +40,7 @@ export const BUSINESS_CONFIG: BusinessConfig = {
   whatsapp: '9629701566',
   whatsappDisplay: '+91 96297 01566',
   whatsappRaw: '919629701566',
-  email: 'logeshwaran102002@gmail.com',
+  email: 'contact@spltransports.com',
   location: 'Tirupattur',
   locationFull: 'Tirupattur, Tamil Nadu',
   workingHours: 'Available for Scheduled & Urgent Transport Trips',

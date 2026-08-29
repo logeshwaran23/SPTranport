@@ -58,7 +58,7 @@ export const EnquiryForm: React.FC = () => {
 
         if (result.success) {
           setStatus('success');
-          setStatusMessage(`Your transport enquiry has been emailed to ${BUSINESS_CONFIG.email}. We will call you back shortly!`);
+          setStatusMessage('Thanks for submitting enquiry form, we will call you shortly!');
           setFormData({
             name: '',
             phone: '',
@@ -96,7 +96,7 @@ export const EnquiryForm: React.FC = () => {
 
         if (formSubmitResult.success === 'true' || formSubmitResult.success === true) {
           setStatus('success');
-          setStatusMessage(`Your transport enquiry has been sent to ${BUSINESS_CONFIG.email}. We will call you back shortly!`);
+          setStatusMessage('Thanks for submitting enquiry form, we will call you shortly!');
           setFormData({
             name: '',
             phone: '',
@@ -114,7 +114,7 @@ export const EnquiryForm: React.FC = () => {
 
       // 3. Fallback: Show success notice
       setStatus('success');
-      setStatusMessage(`Thank you, ${formData.name}! Your transport enquiry has been emailed directly to ${BUSINESS_CONFIG.email}. We will call you back shortly!`);
+      setStatusMessage('Thanks for submitting enquiry form, we will call you shortly!');
 
       setFormData({
         name: '',
@@ -128,7 +128,7 @@ export const EnquiryForm: React.FC = () => {
 
     } catch {
       setStatus('success');
-      setStatusMessage(`Thank you! Your transport enquiry has been emailed directly to ${BUSINESS_CONFIG.email}. We will call you back shortly!`);
+      setStatusMessage('Thanks for submitting enquiry form, we will call you shortly!');
     }
   };
 
@@ -143,9 +143,6 @@ export const EnquiryForm: React.FC = () => {
         <h3 className="text-2xl font-black text-slate-900 tracking-tight">
           Request a Transport Quote
         </h3>
-        <p className="text-xs sm:text-sm text-slate-600">
-          Fill out your pickup & delivery details below. Enquiries are emailed directly to <strong className="text-slate-900">{BUSINESS_CONFIG.email}</strong>.
-        </p>
       </div>
 
       {/* Success Notification Banner */}
@@ -156,7 +153,7 @@ export const EnquiryForm: React.FC = () => {
             <span>Enquiry Sent Successfully!</span>
           </div>
           <p className="text-xs sm:text-sm text-emerald-800 leading-relaxed font-medium">
-            {statusMessage || `Thank you! Your transport enquiry details have been sent directly to ${BUSINESS_CONFIG.email}. We will call you back shortly!`}
+            {statusMessage || 'Thanks for submitting enquiry form, we will call you shortly!'}
           </p>
         </div>
       )}
@@ -192,7 +189,7 @@ export const EnquiryForm: React.FC = () => {
                 required
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="e.g. Logeshwaran"
+                placeholder="Enter your name"
                 className="w-full pl-10 pr-4 py-2.5 text-sm rounded-xl border border-slate-300 bg-slate-50/50 text-slate-900 focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 transition-all outline-none"
               />
             </div>
@@ -212,7 +209,7 @@ export const EnquiryForm: React.FC = () => {
                 required
                 value={formData.phone}
                 onChange={handleChange}
-                placeholder="e.g. 9629701566"
+                placeholder="Enter your phone number"
                 className="w-full pl-10 pr-4 py-2.5 text-sm rounded-xl border border-slate-300 bg-slate-50/50 text-slate-900 focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 transition-all outline-none"
               />
             </div>
@@ -353,7 +350,7 @@ export const EnquiryForm: React.FC = () => {
 
         <div className="pt-2 text-center text-[11px] text-slate-500 flex items-center justify-center gap-1.5">
           <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-          <span>Submits directly in the background to {BUSINESS_CONFIG.email}</span>
+          <span>Submits directly to SPL Transports</span>
         </div>
 
       </form>
