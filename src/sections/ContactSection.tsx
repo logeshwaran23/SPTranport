@@ -16,7 +16,7 @@ export const ContactSection: React.FC = () => {
             Contact & Enquiry
           </span>
           <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-            Get in Touch & Book Transport
+            Contact SPL Transports
           </h2>
           <p className="text-sm sm:text-base text-slate-600">
             Fill out the enquiry form below or call / WhatsApp us directly.

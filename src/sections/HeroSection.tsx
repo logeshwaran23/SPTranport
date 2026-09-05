@@ -27,7 +27,7 @@ export const HeroSection: React.FC = () => {
 
           {/* Main Headline */}
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.15] drop-shadow-sm">
-            Reliable <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-300">Farm-to-Market</span> Transport
+            Reliable <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-300">Transport Services</span> in Tamil Nadu
           </h1>
 
           {/* Supporting Text */}

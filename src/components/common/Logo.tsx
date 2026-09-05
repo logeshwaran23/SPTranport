@@ -9,7 +9,7 @@ interface LogoProps {
 
 export const Logo: React.FC<LogoProps> = ({
   variant = 'dark',
-  logoImage = '/images/sp-logo-3d.png',
+  logoImage = '/images/spl-transports-logo-3d.png',
   className = ''
 }) => {
   const isLight = variant === 'light';
@@ -23,7 +23,7 @@ export const Logo: React.FC<LogoProps> = ({
       <div className="relative flex items-center justify-center shrink-0 w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-white p-0.5 border border-amber-300/80 shadow-md group-hover:scale-105 transition-transform duration-300">
         <img
           src={logoImage}
-          alt={`${BUSINESS_CONFIG.name} 3D Logo`}
+          alt="SPL Transports Logo"
           className="w-full h-full object-cover rounded-full"
           width="52"
           height="52"

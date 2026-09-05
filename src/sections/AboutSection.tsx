@@ -14,7 +14,7 @@ export const AboutSection: React.FC = () => {
             <div className="relative rounded-3xl overflow-hidden border border-slate-200 shadow-2xl bg-white group">
               <img
                 src={ABOUT_INFO.imageUrl}
-                alt="SPL TRANSPORTS pickup truck carrying fresh agricultural vegetables"
+                alt="SPL Transports pickup truck transporting agricultural goods and produce in Tamil Nadu"
                 className="w-full h-80 sm:h-96 lg:h-[420px] object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
                 width="800"

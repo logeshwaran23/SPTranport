@@ -32,7 +32,7 @@ export const ServicesSection: React.FC = () => {
             Services & Vehicles
           </span>
           <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-            Reliable Transport for Your Agricultural Needs
+            Our Transport Services
           </h2>
           <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
             From farm pickup to market delivery, we provide dependable vehicles with experienced drivers for transporting agricultural products and goods.
@@ -59,7 +59,7 @@ export const ServicesSection: React.FC = () => {
                     <div className="relative h-44 sm:h-48 w-full overflow-hidden bg-slate-900">
                       <img
                         src={service.imageUrl}
-                        alt={`${service.title} - SPL Transports Service`}
+                        alt={service.imageAlt || `${service.title} - SPL Transports goods transport service in Tamil Nadu`}
                         className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
                         width="400"

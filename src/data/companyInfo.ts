@@ -62,8 +62,8 @@ export const TRUST_HIGHLIGHTS: TrustHighlight[] = [
 ];
 
 export const ABOUT_INFO = {
-  title: 'Transport That Connects Farms to Markets',
-  subtitle: 'About SPL TRANSPORTS',
+  title: 'About SPL Transports',
+  subtitle: 'Farm-to-Market Transport',
   description: BUSINESS_CONFIG.aboutText,
   points: [
     'Pickup vehicle provided with a driver for every trip',
@@ -81,7 +81,8 @@ export const SERVICES: ServiceItem[] = [
     description: 'Ideal for transporting agricultural products, farm goods, sacks, crates, and other loads.',
     iconName: 'Truck',
     badge: 'Popular Choice',
-    imageUrl: '/images/about-vehicle.png'
+    imageUrl: '/images/spl-transports-pickup-vehicle.png',
+    imageAlt: 'SPL Transports Mahindra Bolero pickup truck for agricultural goods transportation in Tamil Nadu'
   },
   {
     id: 'tractor-transport',
@@ -89,7 +90,8 @@ export const SERVICES: ServiceItem[] = [
     description: 'Suitable for farm operations, heavy agricultural loads, farm equipment, and local transport.',
     iconName: 'Tractor',
     badge: 'Heavy Farm Transport',
-    imageUrl: '/images/tractor-transport.png'
+    imageUrl: '/images/spl-transports-tractor-transport.png',
+    imageAlt: 'SPL Transports tractor transport for heavy agricultural equipment and farm loads'
   },
   {
     id: 'farm-to-market-transport',
@@ -97,7 +99,8 @@ export const SERVICES: ServiceItem[] = [
     description: 'Reliable pickup and delivery support for moving agricultural products from farms to markets.',
     iconName: 'Store',
     badge: 'Direct Market Delivery',
-    imageUrl: '/images/farm-market-delivery.png'
+    imageUrl: '/images/spl-transports-farm-market-delivery.png',
+    imageAlt: 'SPL Transports produce delivery truck transporting fresh harvest from farms to wholesale markets'
   }
 ];
 
@@ -129,7 +132,7 @@ export const SERVICE_TRUST_HIGHLIGHTS = [
 ];
 
 export const VEHICLE_INFO: VehicleInfo = {
-  title: 'Our Pickup Vehicle',
+  title: 'Agricultural Goods Transportation',
   badge: 'Vehicle + Driver Service',
   description: 'Reliable pickup transportation with a driver for agricultural products and other goods.',
   points: [
@@ -143,7 +146,7 @@ export const VEHICLE_INFO: VehicleInfo = {
 };
 
 export const SERVICE_AREA_INFO: ServiceAreaInfo = {
-  title: 'Your Destination, Our Route',
+  title: 'Service Area & Transport Destinations',
   subtitle: 'Service Area',
   description: 'We provide transport based on your location and destination requirements.',
   exampleDestinations: [

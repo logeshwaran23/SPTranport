@@ -16,6 +16,7 @@ export interface ServiceItem {
   description: string;
   iconName: string;
   imageUrl?: string;
+  imageAlt?: string;
   badge?: string;
 }
 

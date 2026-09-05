@@ -28,7 +28,7 @@ export const VehicleSection: React.FC = () => {
             <div className="relative rounded-3xl overflow-hidden border border-slate-200 shadow-xl bg-slate-950 group">
               <img
                 src={VEHICLE_INFO.imageUrl}
-                alt="Commercial pickup vehicle carrying fresh agricultural produce"
+                alt="SPL Transports goods transport pickup truck in Tamil Nadu"
                 className="w-full h-80 sm:h-96 object-cover opacity-95 group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
                 width="800"
